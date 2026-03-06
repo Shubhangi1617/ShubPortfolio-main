@@ -3,10 +3,9 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from '@/lib/motion-wrapper';
-import { cn } from '@/lib/utils';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { ExternalLink, Github } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Project } from '@/components/sections/projects';
 
 interface ProjectCardProps {
@@ -15,69 +14,72 @@ interface ProjectCardProps {
   inView: boolean;
 }
 
-export function ProjectCard({ project, index, inView }: ProjectCardProps) {
-  const { title, description, image, technologies, githubUrl, liveUrl, featured } = project;
-  
+export default function ProjectCard({
+  project,
+  index,
+  inView,
+}: ProjectCardProps) {
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
-      animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-      transition={{ duration: 0.5, delay: 0.1 * index }}
-      className={cn(
-        "group flex flex-col overflow-hidden rounded-xl border bg-card shadow-sm transition-all hover:shadow-md",
-        featured && "md:col-span-2"
-      )}
+      animate={inView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.4, delay: index * 0.1 }}
+      className="group rounded-xl border bg-card overflow-hidden hover:shadow-lg transition"
     >
-      <div className="relative aspect-video overflow-hidden">
+
+      <div className="relative h-52">
+
         <Image
-          src={image}
-          alt={title}
+          src={project.image}
+          alt={project.title}
           fill
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
+          className="object-cover group-hover:scale-105 transition duration-500"
         />
-        {featured && (
-          <div className="absolute top-3 right-3">
-            <Badge variant="secondary" className="bg-primary text-primary-foreground">
-              Featured Project
-            </Badge>
+
+        {project.image === '/confidential.png' && (
+          <div className="absolute inset-0 bg-black/60 flex items-center justify-center text-white text-sm text-center px-6">
+            Confidential Project <br /> Screenshots unavailable
           </div>
         )}
+
       </div>
-      
-      <div className="flex flex-col flex-grow p-5 md:p-6 space-y-4">
-        <h3 className="text-xl font-bold">{title}</h3>
-        
-        <p className="text-muted-foreground flex-grow">
-          {description}
+
+      <div className="p-6 flex flex-col gap-4">
+
+        <h3 className="text-xl font-semibold">
+          {project.title}
+        </h3>
+
+        <p className="text-sm text-muted-foreground">
+          {project.description}
         </p>
-        
-        <div className="flex flex-wrap gap-2 pt-2">
-          {technologies.map((tech) => (
-            <Badge key={tech} variant="outline" className="bg-secondary/50">
+
+        <div className="flex flex-wrap gap-2">
+
+          {project.technologies.map((tech) => (
+            <Badge key={tech} variant="secondary">
               {tech}
             </Badge>
           ))}
+
         </div>
-        
-        <div className="flex gap-3 pt-4 mt-auto">
-          <Button asChild variant="outline" size="sm" className="gap-1">
-            <Link href={githubUrl} target="_blank" rel="noopener noreferrer">
-              <Github className="h-4 w-4 mr-1" />
-              Code
+
+        {project.caseStudyUrl && (
+
+          <Button asChild className="mt-3 w-fit">
+
+            <Link href={project.caseStudyUrl}>
+              View Case Study
+              <ExternalLink className="ml-2 h-4 w-4" />
             </Link>
+
           </Button>
-          
-          {liveUrl && (
-            <Button asChild variant="default" size="sm" className="gap-1">
-              <Link href={liveUrl} target="_blank" rel="noopener noreferrer">
-                <ExternalLink className="h-4 w-4 mr-1" />
-                Live Demo
-              </Link>
-            </Button>
-          )}
-        </div>
+
+        )}
+
       </div>
+
     </motion.div>
   );
 }
