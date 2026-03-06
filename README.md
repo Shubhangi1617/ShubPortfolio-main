@@ -2,14 +2,14 @@
 
 > A minimal, modern, and performance-focused developer portfolio built with **Next.js** and **Tailwind CSS**.
 
----
+
 
 <div align="center">
   <img src="./public/preview.png" height="400" width="800" alt="Shubhangi Portfolio Preview"/>
 </div>
 
 <div align="center">
-  <p><em>A clean and responsive portfolio showcasing my work, skills, and projects.</em></p>
+  
 
   <h3>
     <a href="https://your-vercel-link.vercel.app/" target="_blank">🌐 View Live Demo</a>
