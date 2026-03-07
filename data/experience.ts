@@ -10,46 +10,74 @@ export interface Experience {
 
 export const experienceData: Experience[] = [
   {
-    "id": 1,
-    "title": "Project Intern (Data Archiving Lead)",
-    "company": "Tappware Solution LTD",
-    "location": "Dhaka, Bangladesh",
-    "period": "May 2021 - July 2021",
-    "description": [
-      "Led a critical data archiving project as a team lead under a government contract with the National Revenue Board (NRB).",
-      "Managed the end-to-end data migration and archiving process, ensuring high standards of data integrity and quality control.",
-      "Successfully delivered the complete project, which significantly streamlined the government's audit procedures and data retrieval systems.",
-      "Developed valuable skills in project management, team collaboration, and handling large-scale datasets in a professional environment."
+    id: 1,
+    title: "Android App Developer",
+    company: "Frtpe",
+    location: "Remote",
+    period: "2023 - Present",
+    description: [
+      "Designed and developed a warehouse import/export management Android application.",
+      "Worked on system workflows for managing warehouse inventory and logistics processes.",
+      "Contributed to UI/UX design and application structure to improve usability and efficiency."
     ],
-    "technologies": [
-      "Data Management",
-      "Data Integrity",
-      "Microsoft Excel",
-      "SQL (for data verification)",
-      "Project Management",
-      "Team Leadership"
+    technologies: [
+      "Android Development",
+      "System Design",
+      "UI/UX Design",
+      "App Workflow Design"
     ]
   },
   {
-    "id": 2,
-    "title": "Junior Web Developer",
-    "company": "Creative Hub Digital",
-    "location": "Remote",
-    "period": "August 2022 - April 2023",
-    "description": [
-      "Developed responsive and user-friendly websites for various clients using fundamental web technologies.",
-      "Translated UI/UX design mockups from Figma into clean, functional, and pixel-perfect code.",
-      "Collaborated with senior developers to fix bugs, optimize website performance, and implement new features.",
-      "Gained hands-on experience with version control systems like Git for team-based projects."
+    id: 2,
+    title: "Junior Software Developer",
+    company: "Modern Informatics",
+    location: "Mumbai, India",
+    period: "Aug 2022 - Mar 2023",
+    description: [
+      "Participated in development of an in-house C# based web application.",
+      "Worked on backend development tasks and application support.",
+      "Collaborated with the team to debug and improve existing features.",
+      "Developed a strong understanding of UI/UX and system functionality."
     ],
-    "technologies": [
-      "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)",
-      "Bootstrap",
-      "jQuery",
-      "Git & GitHub",
-      "Figma"
+    technologies: [
+      ".NET Core",
+      "C#",
+      "SQL",
+      "JavaScript"
+    ]
+  },
+  {
+    id: 3,
+    title: "Technical & Operations Intern",
+    company: "VC Technosolutions",
+    location: "Mumbai, India",
+    period: "Jun 2022 - Aug 2022",
+    description: [
+      "Worked on operational and technical support tasks within project workflows.",
+      "Managed data and reports using Excel and internal tools.",
+      "Developed strong skills in data organization and technical documentation."
+    ],
+    technologies: [
+      "Microsoft Excel",
+      "Data Management",
+      "Technical Support"
+    ]
+  },
+  {
+    id: 4,
+    title: "Freelance UX Designer",
+    company: "Freelance Project",
+    location: "Remote",
+    period: "2022",
+    description: [
+      "Designed UX flows and interface concepts for a dating application.",
+      "Created wireframes and user flow diagrams for improved user experience.",
+      "Worked on visual design ideas to enhance product usability."
+    ],
+    technologies: [
+      "UI/UX Design",
+      "Wireframing",
+      "User Flow Design"
     ]
   }
 ];

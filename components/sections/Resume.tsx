@@ -80,7 +80,7 @@ export default function Resume({ activeTab, onTabChange }: ResumeProps) {
             <TabsTrigger value="experience" className="text-base sm:text-lg rounded-full">
               <Briefcase className="mr-2 h-5 w-5" />
               Experience
-            </TabsTrigger>
+            </TabsTrigger>  
             <TabsTrigger value="education" className="text-base sm:text-lg rounded-full">
               <GraduationCap className="mr-2 h-5 w-5" />
               Education

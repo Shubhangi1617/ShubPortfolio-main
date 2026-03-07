@@ -4,7 +4,8 @@ import { Resend } from 'resend';
 export const dynamic = 'force-dynamic';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
-const myEmail = 'smmaksudulhaque2000@gmail.com';
+
+const myEmail = 'tatheshubhangi16@gmail.com';
 
 export async function POST(request: Request) {
   try {
@@ -13,27 +14,37 @@ export async function POST(request: Request) {
     const { name, email, subject, message } = body;
 
     if (!name || !email || !subject || !message) {
-      return NextResponse.json({ error: 'Missing required fields' }, { status: 400 });
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      );
     }
 
     const data = await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>',
+      from: 'Portfolio Contact <onboarding@resend.dev>',
       to: [myEmail],
       subject: `New Message from Portfolio: ${subject}`,
-      replyTo: email,
+      replyTo: email,   // ✅ correct property
       html: `
         <div>
-          <h2>Message from ${name} (${email})</h2>
+          <h2>New Portfolio Message</h2>
+          <p><strong>Name:</strong> ${name}</p>
+          <p><strong>Email:</strong> ${email}</p>
+          <p><strong>Subject:</strong> ${subject}</p>
           <hr />
-          <h3>Subject: ${subject}</h3>
           <p>${message}</p>
         </div>
       `,
     });
 
     return NextResponse.json(data);
-    
+
   } catch (error) {
-    return NextResponse.json({ error: 'Internal Server Error' }, { status: 500 });
+    console.error(error);
+
+    return NextResponse.json(
+      { error: 'Internal Server Error' },
+      { status: 500 }
+    );
   }
 }

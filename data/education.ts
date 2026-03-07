@@ -11,36 +11,30 @@ export interface Education {
 export const educationData: Education[] = [
   {
     id: 1,
-    degree: "Honours 4th Year (Accounting)",
-    institution: "Demra University College - DUC",
-    duration: "2021-Present",
-    description: "Currently pursuing a Bachelor of Honours degree in Accounting. Core coursework includes financial accounting, taxation, and auditing standards.",
+    degree: "Bachelor of Engineering (Information Technology)",
+    institution: "Pillai HOC College of Engineering & Technology, Maharashtra",
+    duration: "2019 – 2022",
+    description:
+      "Completed a Bachelor's degree in Information Technology with focus on software development, programming fundamentals, and modern web technologies.",
     achievements: [
-      "Consistently maintained a strong academic record.",
-      "Actively participated in departmental seminars and workshops.",
+      "Built strong foundation in programming and software development.",
+      "Worked with technologies like C#, JavaScript, SQL and .NET.",
+      "Developed understanding of system design and backend development."
     ],
-    certificate: undefined,
+    certificate: "degree_certificate.pdf"
   },
   {
     id: 2,
-    degree: "Higher Secondary Certificate (HSC)",
-    institution: "Dania University College",
-    duration: "2018 - 2020",
-    description: "Completed Higher Secondary Certificate with a major in Business Studies, gaining a solid foundation in accounting, finance, and management.",
+    degree: "Diploma in Computer Engineering",
+    institution: "Pillai HOC Polytechnic, Rasayani",
+    duration: "2016 – 2019",
+    description:
+      "Completed a diploma program in Computer Engineering covering programming, databases, and computer systems.",
     achievements: [
-      "GPA: 3.92/5.00"
+      "Learned fundamentals of programming and database management.",
+      "Gained early exposure to software development tools.",
+      "Built problem-solving and debugging skills."
     ],
-    certificate: 'HSC Certificate.pdf',
-  },
-  {
-    id: 3,
-    degree: "Secondary School Certificate (SSC)",
-    institution: "Barnomala Adarsha High School And College",
-    duration: "2016 - 2018",
-    description: "Completed Secondary School Certificate with a major in Business Studies, focusing on accounting, finance, and business entrepreneurship.",
-    achievements: [
-      "GPA: 3.67/5.00"
-    ],
-    certificate: 'SSC Certificate.pdf',
+    certificate: "diploma_certificate.pdf"
   }
 ];

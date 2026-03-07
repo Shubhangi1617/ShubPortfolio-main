@@ -46,7 +46,7 @@ export default function Header({ onNavClick }: HeaderProps) {
           href="/" 
           className="text-2xl font-bold tracking-tight hover:text-primary/90 transition-colors"
         >
-          Maksudul<span className="text-primary"> Haque</span>
+          Shubhangi<span className="text-primary"> Tathe</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-6 relative">

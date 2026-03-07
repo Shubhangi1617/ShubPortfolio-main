@@ -25,7 +25,7 @@ export default function Hero() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="mb-4 text-sm md:text-base text-primary font-medium"
         >
-          Hello, I&apos;m a
+          Hi, I’m
         </motion.div>
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -33,17 +33,14 @@ export default function Hero() {
           transition={{ delay: 0.4, duration: 0.8 }}
           className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
         >
-          Full Stack Developer
+          Designer × Developer
         </motion.h1>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.8 }}
           className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto"
-        >
-          I build exceptional digital experiences with modern technologies.
-          Specializing in creating responsive, user-friendly applications
-          with clean, efficient code.
+        >Designing with intention. Building with code. Exploring AI along the way.
         </motion.p>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
