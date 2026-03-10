@@ -57,7 +57,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="max-w-3xl mx-auto py-16 px-4 scroll-mt-24"
+      className="max-w-3xl mx-auto py-16 px-4 scroll-mt-32"
     >
 
       <h1 className="text-3xl font-bold mb-6">

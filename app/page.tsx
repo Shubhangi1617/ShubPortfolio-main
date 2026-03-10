@@ -8,6 +8,9 @@ import Skills from '@/components/sections/skills';
 import Projects from '@/components/sections/projects';
 import Resume from '@/components/sections/Resume';
 import Contact from '@/components/sections/contact';
+import Services  from '@/components/sections/services';
+import HireMe from '@/components/sections/hireme'
+import Products from '@/components/sections/products'
 
 export default function Home() {
   const [activeResumeTab, setActiveResumeTab] = useState('experience');
@@ -29,6 +32,9 @@ export default function Home() {
           <About />
           <Skills />
           <Projects />
+          <Services /> 
+          <Products/>
+          <HireMe/>
           <Resume 
             activeTab={activeResumeTab} 
             onTabChange={setActiveResumeTab} 
