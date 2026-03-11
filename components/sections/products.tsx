@@ -9,40 +9,22 @@ const products = [
     title: "Canva Templates",
     description:
       "Event templates, flyers, business cards, and wedding or engagement designs created using Canva.",
-    link: "/products/templates",
     image: "/products/businesscard-back.png"
   },
   {
-    title: "Portfolio & Business Websites",
-    description:
-      "Modern responsive websites built using Next.js and modern frontend tools.",
-    image: "/products/websites.png"
-  },
-  {
-    title: "Web Applications",
-    description:
-      "Custom web apps and startup MVP interfaces designed and developed for real-world use.",
-    image: "/products/webapp.png"
-  },
-  {
-    title: "Mandala Artwork",
+    title: "Artwork",
     description:
       "Handmade mandala art pieces designed for decoration and gifting.",
-    image: "/products/mandala.png"
+    image: "/art/artpreview.jpeg"
   },
   {
     title: "Fridge Magnets",
     description:
       "Creative handcrafted magnets designed using artistic patterns.",
-    image: "/products/magnet.png"
+    image: "/products/magnetpreview.png"
   },
-  {
-    title: "Canvas Paintings",
-    description:
-      "Hand-painted canvas artwork including doodles and decorative paintings.",
-    image: "/products/canvas.png"
-  }
-];
+]
+
 export default function Products() {
   return (
     <section id="products" className="py-20 md:py-32 scroll-mt-32">
@@ -53,6 +35,7 @@ export default function Products() {
           subtitle="Digital templates, web projects, and handmade artwork I create"
         />
 
+        {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-12">
 
           {products.map((product, index) => (
@@ -65,38 +48,40 @@ export default function Products() {
               className="rounded-xl border bg-background overflow-hidden hover:shadow-lg transition"
             >
 
-              {/* Image placeholder */}
+              {/* Image */}
               <img
-              src={product.image}
-               alt={product.title}
-               className="w-full h-40 object-cover"
+                src={product.image}
+                alt={product.title}
+                className="w-full h-44 object-cover"
               />
 
-              {/* Card Content */}
+              {/* Content */}
               <div className="p-6">
 
                 <h3 className="text-lg font-semibold mb-2">
                   {product.title}
                 </h3>
 
-                <p className="text-sm text-muted-foreground mb-4">
+                <p className="text-sm text-muted-foreground">
                   {product.description}
                 </p>
-
-                {/* Button appears only when link exists */}
-                {product.link && (
-                  <Link
-                    href={product.link}
-                    className="inline-block text-sm font-medium text-primary hover:underline"
-                  >
-                    View Templates →
-                  </Link>
-                )}
 
               </div>
 
             </motion.div>
           ))}
+
+        </div>
+
+        {/* Single Button */}
+        <div className="flex justify-center mt-12">
+
+          <Link
+            href="/products/templates"
+            className="bg-primary text-primary-foreground px-6 py-3 rounded-md text-sm font-medium hover:opacity-90 transition"
+          >
+            Explore My Work
+          </Link>
 
         </div>
 
