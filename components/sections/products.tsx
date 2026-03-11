@@ -1,5 +1,6 @@
 'use client'
 
+import Link from 'next/link'
 import { motion } from '@/lib/motion-wrapper'
 import { SectionTitle } from '@/components/ui/section-title'
 
@@ -8,12 +9,13 @@ const products = [
     title: "Canva Templates",
     description:
       "Event templates, flyers, business cards, and wedding or engagement designs created using Canva.",
-    image: "/products/templates.png"
+    link: "/products/templates",
+    image: "/products/businesscard-back.png"
   },
   {
     title: "Portfolio & Business Websites",
     description:
-      "Modern responsive websites built using Next.js, Tailwind, and modern frontend tools.",
+      "Modern responsive websites built using Next.js and modern frontend tools.",
     image: "/products/websites.png"
   },
   {
@@ -31,17 +33,16 @@ const products = [
   {
     title: "Fridge Magnets",
     description:
-      "Creative handcrafted magnets designed using artistic patterns and colors.",
+      "Creative handcrafted magnets designed using artistic patterns.",
     image: "/products/magnet.png"
   },
   {
     title: "Canvas Paintings",
     description:
-      "Hand-painted canvas artwork including doodles, lippen art, and decorative paintings.",
+      "Hand-painted canvas artwork including doodles and decorative paintings.",
     image: "/products/canvas.png"
   }
-]
-
+];
 export default function Products() {
   return (
     <section id="products" className="py-20 md:py-32 scroll-mt-32">
@@ -64,18 +65,34 @@ export default function Products() {
               className="rounded-xl border bg-background overflow-hidden hover:shadow-lg transition"
             >
 
-              <div className="h-40 bg-muted flex items-center justify-center text-sm text-muted-foreground">
-                Image Placeholder
-              </div>
+              {/* Image placeholder */}
+              <img
+              src={product.image}
+               alt={product.title}
+               className="w-full h-40 object-cover"
+              />
 
+              {/* Card Content */}
               <div className="p-6">
+
                 <h3 className="text-lg font-semibold mb-2">
                   {product.title}
                 </h3>
 
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground mb-4">
                   {product.description}
                 </p>
+
+                {/* Button appears only when link exists */}
+                {product.link && (
+                  <Link
+                    href={product.link}
+                    className="inline-block text-sm font-medium text-primary hover:underline"
+                  >
+                    View Templates →
+                  </Link>
+                )}
+
               </div>
 
             </motion.div>
